@@ -1,14 +1,24 @@
-const fastify = require('fastify')({
-  logger: true
+'use strict'
+
+// Read the .env file.
+require('dotenv').config()
+
+// Require the framework
+const Fastify = require('fastify')
+
+// Instantiate Fastify with some config
+const app = Fastify({
+  logger: true,
+  pluginTimeout: 30000
 })
 
-fastify.register(require('./preprocess'))
-fastify.register(require('./postprocess'))
+// Register your application as a normal plugin.
+app.register(require('./app.js'))
 
-fastify.listen(3000, function (err, address) {
+// Start listening.
+app.listen(process.env.PORT || 3000, '0.0.0.0', (err) => {
   if (err) {
-    fastify.log.error(err)
+    app.log.error(err)
     process.exit(1)
   }
-  // Server is now listening on ${address}
 })
