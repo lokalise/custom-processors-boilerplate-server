@@ -18,4 +18,4 @@ COPY --chown=node:node Procfile .
 ENV NODE_PATH=.
 
 USER node
-CMD [ "dumb-init", "node", "/app/src/server.js" ]
+CMD [ "dumb-init", "node", "/app/server.js" ]
