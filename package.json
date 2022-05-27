@@ -7,7 +7,7 @@
   "scripts": {
     "start": "node server.js",
     "dev": "fastify start -w -l info -P app.js",
-    "lint": "eslint \"routes/**/*.js\" *.js\"",
+    "lint": "eslint \"routes/**/*.js\" *.js",
     "prettier": "prettier --write \"routes/**/*.{js,ts}\" app.js server.js"
   },
   "keywords": [],
