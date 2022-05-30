@@ -6,7 +6,9 @@
   "main": "server.js",
   "scripts": {
     "start": "node server.js",
-    "dev": "fastify start -w -l info -P app.js"
+    "dev": "fastify start -w -l info -P app.js",
+    "lint": "eslint \"routes/**/*.js\" *.js",
+    "prettier": "prettier --write \"routes/**/*.{js,ts}\" app.js server.js"
   },
   "keywords": [],
   "author": "Asaph Kotzin",
@@ -27,14 +29,13 @@
     "fastify-plugin": "^3.0.1"
   },
   "devDependencies": {
-    "nodemon": "^2.0.16"
-  },
-  "tap": {
-    "esm": false,
-    "ts": false,
-    "jsx": false,
-    "flow": false,
-    "coverage": false,
-    "jobs-auto": true
+    "eslint": "^8.16.0",
+    "eslint-config-prettier": "^8.5.0",
+    "eslint-plugin-import": "^2.26.0",
+    "eslint-plugin-jest": "^26.2.2",
+    "eslint-plugin-prettier": "^4.0.0",
+    "jest": "^28.1.0",
+    "nodemon": "^2.0.16",
+    "prettier": "^2.6.2"
   }
 }
