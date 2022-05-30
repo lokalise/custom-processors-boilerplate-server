@@ -15,26 +15,20 @@ jobs:
     runs-on: ubuntu-latest
     name: linting
 
-    strategy:
-      matrix:
-        node-version: [16.x]
-
     steps:
       - name: Checkout Repository
         uses: actions/checkout@v3
         with:
           fetch-depth: 1
 
-      - name: Setup Node ${{ matrix.node-version }}
+      - name: Setup Node.js
         uses: actions/setup-node@v3
         with:
           always-auth: false
-          node-version: ${{ matrix.node-version }}
+          node-version: 16.x
 
       - name: Run npm install
         run: npm install
 
       - name: Run lint
         run: npm run lint
-        env:
-          CI: true
