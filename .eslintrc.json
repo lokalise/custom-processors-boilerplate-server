@@ -11,20 +11,20 @@
     "jest": true,
     "node": true
   },
-  "plugins": [
-    "prettier",
-    "jest",
-    "import"
-  ],
+  "plugins": ["prettier", "jest", "import"],
   "parserOptions": {
     "ecmaVersion": 2018,
     "sourceType": "module"
   },
   "rules": {
     "prettier/prettier": "error",
-    "import/order": ["warn", {
-      "alphabetize": {"order": "asc"},
-      "newlines-between": "always"
-    }]
-  }
+    "import/order": [
+      "warn",
+      {
+        "alphabetize": { "order": "asc" },
+        "newlines-between": "always"
+      }
+    ]
+  },
+  "ignorePatterns": ["node_modules/"]
 }
